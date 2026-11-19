@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Phạm Tùng Anh (assttz) — Giang Hồ Ký</title>
+  <title>Phạm Tùng Anh (assttz) — ABOUT ME</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Font chữ mang âm hưởng thư pháp & hiện đại -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,15 +27,17 @@
           },
           colors: {
             ink: {
-              950: '#0a0a0c', // Đen mặc nhiễm sâu
-              900: '#121216', // Nền thẻ dark mode
-              800: '#1c1c22', // Viền / Hover dark mode
-              100: '#f5f2eb', // Giấy tuyên thành light mode
-              50:  '#faf8f5', // Nền thẻ light mode
+              950: '#09090b',
+              900: '#121215',
+              800: '#1c1c21',
+              100: '#f4f1ea',
+              50:  '#faf8f5',
             },
-            crimson: {
-              600: '#b91c1c', // Đỏ son triện
-              500: '#dc2626',
+            blood: {
+              950: '#450a0a',
+              900: '#7f1d1d', // Đỏ trầm chủ đạo
+              800: '#991b1b', // Đỏ đậm hover
+              700: '#b91c1c',
             }
           }
         }
@@ -49,27 +51,27 @@
       background-color: #f4f1ea;
       background-image: 
         radial-gradient(at 10% 10%, rgba(30, 30, 35, 0.06) 0px, transparent 50%),
-        radial-gradient(at 90% 30%, rgba(185, 28, 28, 0.04) 0px, transparent 50%),
+        radial-gradient(at 90% 30%, rgba(127, 29, 29, 0.06) 0px, transparent 50%),
         radial-gradient(at 50% 90%, rgba(30, 30, 35, 0.07) 0px, transparent 55%);
     }
     .ink-bg-dark {
-      background-color: #09090b;
+      background-color: #08080a;
       background-image: 
-        radial-gradient(at 15% 15%, rgba(255, 255, 255, 0.04) 0px, transparent 50%),
-        radial-gradient(at 85% 25%, rgba(185, 28, 28, 0.08) 0px, transparent 45%),
-        radial-gradient(at 50% 85%, rgba(255, 255, 255, 0.03) 0px, transparent 55%);
+        radial-gradient(at 15% 15%, rgba(255, 255, 255, 0.03) 0px, transparent 50%),
+        radial-gradient(at 85% 25%, rgba(127, 29, 29, 0.14) 0px, transparent 48%),
+        radial-gradient(at 50% 85%, rgba(255, 255, 255, 0.02) 0px, transparent 55%);
     }
 
-    /* Viền nét cọ cho Avatar */
+    /* Viền nét cọ đỏ đậm xoay quanh Avatar */
     .brush-ring {
       position: relative;
     }
     .brush-ring::before {
       content: '';
       position: absolute;
-      inset: -5px;
+      inset: -4px;
       border-radius: 9999px;
-      background: conic-gradient(from 45deg, #b91c1c, #27272a, #71717a, #b91c1c);
+      background: conic-gradient(from 45deg, #7f1d1d, #18181b, #991b1b, #27272a, #7f1d1d);
       z-index: 0;
       animation: spinSlow 14s linear infinite;
     }
@@ -77,71 +79,92 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Con dấu đỏ (Triện) */
+    /* Con dấu đỏ đậm (Triện) */
     .seal-stamp {
-      border: 1.5px solid #b91c1c;
-      color: #b91c1c;
-      box-shadow: inset 0 0 0 1px rgba(185, 28, 28, 0.3);
+      border: 1.5px solid #7f1d1d;
+      color: #7f1d1d;
+      background: rgba(127, 29, 29, 0.07);
+      box-shadow: inset 0 0 0 1px rgba(127, 29, 29, 0.25);
       letter-spacing: 0.08em;
     }
     .dark .seal-stamp {
-      border-color: #ef4444;
-      color: #ef4444;
-      background: rgba(185, 28, 28, 0.12);
+      border-color: #991b1b;
+      color: #dc2626;
+      background: rgba(127, 29, 29, 0.22);
+      box-shadow: inset 0 0 0 1px rgba(153, 27, 27, 0.35);
     }
-
-    /* Ẩn thanh cuộn ngang */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="ink-bg-light dark:ink-bg-dark text-zinc-800 dark:text-zinc-200 min-h-screen transition-colors duration-300 pb-24 selection:bg-crimson-600 selection:text-white">
+<body class="ink-bg-light dark:ink-bg-dark text-zinc-800 dark:text-zinc-200 min-h-screen transition-colors duration-300 pb-24 selection:bg-blood-900 selection:text-white">
 
   <!-- THANH CÔNG CỤ TRÊN CÙNG -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#f4f1ea]/80 dark:bg-[#09090b]/80 border-b border-zinc-300/60 dark:border-zinc-800/80">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#f4f1ea]/85 dark:bg-[#08080a]/85 border-b border-zinc-300/60 dark:border-zinc-800/80">
     <div class="max-w-xl mx-auto px-4 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-crimson-600 inline-block"></span>
-        <span class="font-serif font-bold tracking-wider text-base text-zinc-900 dark:text-zinc-100">MẶC NHIỄM KÝ</span>
+      <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-blood-900 inline-block ring-2 ring-blood-900/30"></span>
+        <span class="font-serif font-bold tracking-widest text-base text-zinc-900 dark:text-zinc-100 uppercase">ABOUT ME</span>
       </div>
 
       <div class="flex items-center gap-2">
+        <!-- Nút trạng thái Chủ Nhân (Ẩn/Hiện khóa) -->
+        <button id="adminToggleBtn" title="Quyền quản trị" class="w-9 h-9 rounded-full flex items-center justify-center border border-zinc-300 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 text-zinc-500 dark:text-zinc-400 hover:border-blood-900 transition">
+          <i id="adminLockIcon" class="fa-solid fa-lock text-xs"></i>
+        </button>
+
         <!-- Nút chuyển đổi Light / Dark mode -->
-        <button id="themeToggle" aria-label="Đổi giao diện" class="w-9 h-9 rounded-full flex items-center justify-center border border-zinc-300 dark:border-zinc-700 bg-white/70 dark:bg-zinc-900/70 hover:border-crimson-600 transition">
+        <button id="themeToggle" aria-label="Đổi giao diện" class="w-9 h-9 rounded-full flex items-center justify-center border border-zinc-300 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 hover:border-blood-900 transition">
           <i id="themeIcon" class="fa-solid fa-sun text-amber-400 text-sm"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- KHUNG NỘI DUNG CHÍNH (Tối ưu cho điện thoại) -->
+  <!-- KHUNG NỘI DUNG CHÍNH -->
   <main class="max-w-xl mx-auto px-4 pt-5 space-y-6">
 
-    <!-- 1. THẺ GIỚI THIỆU BẢN THÂN (PROFILE HEADER) -->
+    <!-- 1. THẺ GIỚI THIỆU BẢN THÂN -->
     <section class="relative rounded-2xl overflow-hidden bg-ink-50/90 dark:bg-ink-900/90 border border-zinc-300/70 dark:border-zinc-800 shadow-sm">
-      <!-- Ảnh bìa phong cách thủy mặc / anime -->
-      <div class="h-32 w-full relative overflow-hidden bg-zinc-900">
+      <!-- Ảnh bìa -->
+      <div class="h-36 w-full relative overflow-hidden bg-zinc-950 group">
         <img 
+          id="coverImage"
           src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" 
-          alt="Banner Thủy Mặc" 
-          class="w-full h-full object-cover opacity-75 dark:opacity-60 grayscale contrast-125"
+          alt="Ảnh bìa" 
+          class="w-full h-full object-cover opacity-80 dark:opacity-65 contrast-125 transition duration-500"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-ink-50 dark:from-ink-900 via-transparent to-black/30"></div>
-        <!-- Chữ thư pháp trang trí góc phải -->
-        <div class="absolute top-3 right-4 font-serif text-xs tracking-[0.3em] text-white/80 select-none">
+        
+        <!-- Chữ thư pháp góc phải -->
+        <div class="absolute top-3 right-4 font-serif text-xs tracking-[0.3em] text-white/75 select-none">
           江湖夜雨
         </div>
+
+        <!-- Nút đổi ảnh bìa (Chỉ hiện khi bật chế độ Chủ Nhân) -->
+        <label class="admin-only hidden cursor-pointer absolute top-3 left-3 px-3 py-1.5 rounded-full bg-black/70 hover:bg-blood-900 text-white text-[11px] font-medium backdrop-blur-sm border border-white/15 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-camera"></i>
+          <span>Đổi ảnh bìa</span>
+          <input id="coverInput" type="file" accept="image/*" class="hidden" />
+        </label>
       </div>
 
       <!-- Thông tin Avatar, Tên, Biệt danh, Bio -->
       <div class="px-5 pb-5 -mt-14 relative z-10 flex flex-col items-center text-center">
         <!-- Avatar hình tròn -->
-        <div class="brush-ring w-24 h-24 rounded-full p-0.5 mb-3 shadow-lg">
-          <img 
-            src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=500&auto=format&fit=crop" 
-            alt="Phạm Tùng Anh" 
-            class="relative z-10 w-full h-full object-cover rounded-full border-2 border-ink-50 dark:border-ink-900"
-          />
+        <div class="relative mb-3">
+          <div class="brush-ring w-24 h-24 rounded-full p-0.5 shadow-lg">
+            <img 
+              id="avatarImage"
+              src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=500&auto=format&fit=crop" 
+              alt="Phạm Tùng Anh" 
+              class="relative z-10 w-full h-full object-cover rounded-full border-2 border-ink-50 dark:border-ink-900"
+            />
+          </div>
+
+          <!-- Nút đổi Avatar (Chỉ hiện khi bật chế độ Chủ Nhân) -->
+          <label title="Đổi Avatar" class="admin-only hidden cursor-pointer absolute bottom-0 right-0 z-20 w-7 h-7 rounded-full bg-blood-900 hover:bg-blood-800 text-white flex items-center justify-center border-2 border-ink-50 dark:border-ink-900 shadow-md transition">
+            <i class="fa-solid fa-camera text-[10px]"></i>
+            <input id="avatarInput" type="file" accept="image/*" class="hidden" />
+          </label>
         </div>
 
         <!-- Tên thật -->
@@ -149,78 +172,110 @@
           Phạm Tùng Anh
         </h1>
 
-        <!-- Biệt danh (Triện đỏ) -->
+        <!-- Biệt danh (Triện đỏ đậm - Bấm 3 lần để mở khóa nhanh) -->
         <div class="mt-1.5 inline-flex items-center gap-1.5">
-          <span class="seal-stamp px-2 py-0.5 text-xs font-serif font-bold rounded-sm uppercase">
+          <span id="secretSeal" class="seal-stamp px-2.5 py-0.5 text-xs font-serif font-bold rounded-sm uppercase cursor-pointer select-none active:scale-95 transition">
             assttz
           </span>
         </div>
 
-        <!-- Bio -->
-        <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md">
-          "Giữa chốn giang hồ đầy khói bụi, giữ một nét mực bình yên." <br/>
-          Nơi lưu giữ những dòng suy nghĩ vụn vặt, góc nhìn anime, công cụ hay và những thứ mình thấy thú vị.
-        </p>
+        <!-- Bio & Nút chỉnh sửa Bio -->
+        <div class="mt-3 w-full max-w-md relative">
+          <p id="bioDisplay" class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">Giữa chốn giang hồ đầy khói bụi, giữ một nét mực bình yên.
+Nơi lưu giữ những góc nhìn, tài liệu và điều thú vị của riêng tôi.</p>
+
+          <!-- Nút sửa Bio (Chỉ hiện khi bật chế độ Chủ Nhân) -->
+          <button id="editBioBtn" class="admin-only hidden mt-2 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-blood-900/15 text-blood-900 dark:text-red-400 border border-blood-900/30 hover:bg-blood-900 hover:text-white transition">
+            <i class="fa-solid fa-pen text-[10px]"></i>
+            <span>Chỉnh sửa Bio</span>
+          </button>
+
+          <!-- Khung nhập Bio mới -->
+          <div id="bioEditBox" class="hidden mt-2 space-y-2 text-left">
+            <textarea id="bioTextarea" rows="3" class="w-full rounded-xl p-2.5 text-xs bg-zinc-200/70 dark:bg-zinc-800/80 border border-blood-900/40 focus:outline-none"></textarea>
+            <div class="flex justify-end gap-2">
+              <button id="cancelBioBtn" class="px-3 py-1 rounded-lg text-xs text-zinc-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">Hủy</button>
+              <button id="saveBioBtn" class="px-3 py-1 rounded-lg text-xs font-semibold bg-blood-900 text-white hover:bg-blood-800">Lưu Bio</button>
+            </div>
+          </div>
+        </div>
 
         <!-- Dãy nút Liên hệ & Mạng xã hội -->
-        <div class="mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 w-full">
-          <div class="flex flex-wrap items-center justify-center gap-2.5">
+        <div class="mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 w-full space-y-2.5">
+          <div class="flex flex-wrap items-center justify-center gap-2">
             <!-- Locket -->
-            <a href="https://locket.cam" target="_blank" title="Locket" class="group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 hover:bg-amber-500 hover:text-white transition">
+            <a href="https://locket.cam/ph.tanh_33" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 hover:bg-amber-500 hover:text-white transition">
               <i class="fa-solid fa-heart text-[11px]"></i>
               <span>Locket</span>
             </a>
 
             <!-- Facebook -->
-            <a href="https://facebook.com" target="_blank" title="Facebook" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-600 hover:text-white transition">
+            <a href="https://facebook.com/ast.ta4" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-600 hover:text-white transition">
               <i class="fa-brands fa-facebook-f text-[11px]"></i>
               <span>Facebook</span>
             </a>
 
             <!-- Instagram -->
-            <a href="https://instagram.com" target="_blank" title="Instagram" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-pink-500/10 text-pink-700 dark:text-pink-400 border border-pink-500/20 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition">
+            <a href="https://facebook.com/ast.ta4" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-pink-500/10 text-pink-700 dark:text-pink-400 border border-pink-500/20 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition">
               <i class="fa-brands fa-instagram text-xs"></i>
               <span>Instagram</span>
             </a>
 
             <!-- Telegram -->
-            <a href="https://t.me" target="_blank" title="Telegram" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-400 border border-sky-500/20 hover:bg-sky-500 hover:text-white transition">
+            <a href="https://t.me/assttz" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-400 border border-sky-500/20 hover:bg-sky-500 hover:text-white transition">
               <i class="fa-brands fa-telegram text-xs"></i>
               <span>Telegram</span>
             </a>
 
             <!-- TikTok -->
-            <a href="https://tiktok.com" target="_blank" title="TikTok" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-500/10 text-zinc-800 dark:text-zinc-300 border border-zinc-500/25 hover:bg-zinc-900 dark:hover:bg-white dark:hover:text-black hover:text-white transition">
+            <a href="https://tiktok.com/@_ph.tanh_" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-500/10 text-zinc-800 dark:text-zinc-300 border border-zinc-500/25 hover:bg-zinc-900 dark:hover:bg-white dark:hover:text-black hover:text-white transition">
               <i class="fa-brands fa-tiktok text-[11px]"></i>
               <span>TikTok</span>
             </a>
+          </div>
 
-            <!-- Email -->
-            <a href="mailto:example@gmail.com" title="Email" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-crimson-600/10 text-crimson-700 dark:text-red-400 border border-crimson-600/20 hover:bg-crimson-600 hover:text-white transition">
-              <i class="fa-solid fa-envelope text-[11px]"></i>
-              <span>Email</span>
-            </a>
+          <!-- Email hiện trực tiếp ra bên ngoài -->
+          <div class="flex items-center justify-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-blood-900/10 text-blood-900 dark:text-red-400 border border-blood-900/30">
+              <a href="mailto:phamtunganh40@gmail.com" class="flex items-center gap-1.5 hover:underline">
+                <i class="fa-solid fa-envelope text-[11px]"></i>
+                <span>Email của tôi: <strong>phamtunganh40@gmail.com</strong></span>
+              </a>
+              <button onclick="copyEmail()" title="Sao chép Email" class="ml-1 pl-2 border-l border-blood-900/30 hover:text-zinc-900 dark:hover:text-white transition">
+                <i class="fa-regular fa-copy text-[11px]"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. KHUNG ĐĂNG BÀI MỚI (GIAO DIỆN KIỂU FACEBOOK) -->
-    <section class="rounded-2xl bg-ink-50/90 dark:bg-ink-900/90 border border-zinc-300/70 dark:border-zinc-800 p-4 shadow-sm">
+    <!-- 2. KHUNG ĐĂNG BÀI MỚI (CHỈ MỘT MÌNH BẠN NHÌN THẤY KHI MỞ KHÓA) -->
+    <section id="composerSection" class="admin-only hidden rounded-2xl bg-ink-50/95 dark:bg-ink-900/95 border border-blood-900/40 p-4 shadow-md">
+      <div class="flex items-center justify-between mb-3 pb-2 border-b border-zinc-200/70 dark:border-zinc-800">
+        <span class="text-xs font-bold uppercase tracking-wider text-blood-900 dark:text-red-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-feather-pointed"></i>
+          <span>Đăng bài viết mới (Chế độ Chủ Nhân)</span>
+        </span>
+        <button onclick="lockAdminMode()" class="text-[11px] text-zinc-500 hover:text-blood-900 dark:hover:text-red-400">
+          Ẩn khung đăng
+        </button>
+      </div>
+
       <div class="flex gap-3">
-        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=200&auto=format&fit=crop" alt="Avatar" class="w-10 h-10 rounded-full object-cover border border-zinc-300 dark:border-zinc-700 shrink-0" />
+        <img id="composerAvatar" src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=200&auto=format&fit=crop" alt="Avatar" class="w-10 h-10 rounded-full object-cover border border-blood-900/40 shrink-0" />
         <div class="w-full space-y-2.5">
           <textarea 
             id="postCaption" 
-            rows="2" 
-            placeholder="Hôm nay assttz muốn lưu giữ điều gì thú vị?..." 
+            rows="3" 
+            placeholder="Viết cảm nghĩ, chia sẻ link hoặc tài liệu hay..." 
             class="w-full bg-transparent text-sm resize-none focus:outline-none placeholder:text-zinc-400 dark:placeholder:text-zinc-500"
           ></textarea>
 
-          <!-- Ô nhập Link đính kèm (ẩn/hiện khi bấm nút) -->
+          <!-- Ô nhập Link đính kèm -->
           <div id="linkInputBox" class="hidden space-y-2 p-2.5 rounded-xl bg-zinc-200/50 dark:bg-zinc-800/60 border border-zinc-300/60 dark:border-zinc-700/60">
-            <input id="postLinkUrl" type="url" placeholder="Dán đường link hay (https://...)" class="w-full bg-transparent text-xs focus:outline-none border-b border-zinc-300 dark:border-zinc-700 pb-1.5" />
-            <input id="postLinkTitle" type="text" placeholder="Tiêu đề hiển thị cho link (không bắt buộc)" class="w-full bg-transparent text-xs focus:outline-none" />
+            <input id="postLinkUrl" type="url" placeholder="Dán đường link (https://...)" class="w-full bg-transparent text-xs focus:outline-none border-b border-zinc-300 dark:border-zinc-700 pb-1.5" />
+            <input id="postLinkTitle" type="text" placeholder="Tên hiển thị cho link (không bắt buộc)" class="w-full bg-transparent text-xs focus:outline-none" />
           </div>
 
           <!-- Xem trước ảnh / file đã chọn -->
@@ -250,7 +305,7 @@
               </label>
             </div>
 
-            <button id="publishBtn" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 hover:bg-crimson-500 text-white shadow-sm transition active:scale-95">
+            <button id="publishBtn" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-blood-900 hover:bg-blood-800 text-white shadow-sm transition active:scale-95">
               Đăng bài
             </button>
           </div>
@@ -258,14 +313,40 @@
       </div>
     </section>
 
-    <!-- 3. DANH SÁCH BÀI ĐĂNG (BÀI GHIM LUÔN NẰM TRÊN CÙNG) -->
+    <!-- 3. DANH SÁCH BÀI ĐĂNG -->
     <section id="feedContainer" class="space-y-4">
-      <!-- Bài viết sẽ được render tự động bằng JavaScript ở đây -->
+      <!-- Bài viết của bạn sẽ hiển thị ở đây -->
     </section>
 
   </main>
 
-  <!-- MODAL PHÓNG TO ẢNH KHI BẤM VÀO -->
+  <!-- MODAL ĐĂNG NHẬP QUYỀN CHỦ NHÂN -->
+  <div id="authModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="w-full max-w-xs rounded-2xl bg-ink-50 dark:bg-ink-900 border border-blood-900/40 p-5 shadow-2xl space-y-4">
+      <div class="text-center space-y-1">
+        <div class="w-10 h-10 rounded-full bg-blood-900/15 text-blood-900 dark:text-red-400 mx-auto flex items-center justify-center">
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <h3 class="font-serif font-bold text-base text-zinc-900 dark:text-white">Xác Minh Chủ Nhân</h3>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">Nhập mật khẩu để mở khóa đăng bài & chỉnh sửa hồ sơ</p>
+      </div>
+
+      <input 
+        id="adminPasswordInput" 
+        type="password" 
+        placeholder="Nhập mật khẩu..." 
+        onkeydown="if(event.key === 'Enter') verifyAdminPassword()"
+        class="w-full px-3.5 py-2 rounded-xl text-sm bg-zinc-200/70 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:border-blood-900"
+      />
+
+      <div class="flex gap-2">
+        <button onclick="closeAuthModal()" class="flex-1 py-2 rounded-xl text-xs font-medium bg-zinc-200 dark:bg-zinc-800 hover:opacity-90">Hủy</button>
+        <button onclick="verifyAdminPassword()" class="flex-1 py-2 rounded-xl text-xs font-semibold bg-blood-900 hover:bg-blood-800 text-white">Mở khóa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PHÓNG TO ẢNH -->
   <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeImageModal()">
     <button class="absolute top-5 right-5 text-white/80 hover:text-white text-2xl">
       <i class="fa-solid fa-xmark"></i>
@@ -274,17 +355,17 @@
   </div>
 
   <!-- THÔNG BÁO NHANH (TOAST) -->
-  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-medium shadow-lg opacity-0 pointer-events-none transition-opacity duration-300">
-    Đã sao chép liên kết!
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-medium shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 text-center max-w-[90vw]">
+    Thông báo
   </div>
 
-  <!-- THANH ĐIỀU HƯỚNG CỐ ĐỊNH DƯỚI ĐÁY (4 TAB) -->
-  <nav class="fixed bottom-0 inset-x-0 z-40 backdrop-blur-md bg-[#f4f1ea]/90 dark:bg-[#09090b]/90 border-t border-zinc-300/70 dark:border-zinc-800">
+  <!-- THANH ĐIỀU HƯỚNG CỐ ĐỊNH DƯỚI ĐÁY -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 backdrop-blur-md bg-[#f4f1ea]/90 dark:bg-[#08080a]/90 border-t border-zinc-300/70 dark:border-zinc-800">
     <div class="max-w-xl mx-auto grid grid-cols-4 h-16">
       <!-- Tab 1: Active -->
-      <button class="flex flex-col items-center justify-center gap-1 text-crimson-600 dark:text-red-400 font-semibold">
+      <button class="flex flex-col items-center justify-center gap-1 text-blood-900 dark:text-red-500 font-semibold">
         <i class="fa-solid fa-scroll text-base"></i>
-        <span class="text-[11px]">Giang Hồ Ký</span>
+        <span class="text-[11px]">About Me</span>
       </button>
 
       <!-- Tab 2 -->
@@ -307,77 +388,223 @@
     </div>
   </nav>
 
-  <!-- JAVASCRIPT XỬ LÝ GIAO DIỆN & TƯƠNG TÁC -->
+  <!-- JAVASCRIPT LƯU TRỮ BỀN VỮNG (INDEXEDDB) & XỬ LÝ TÍNH NĂNG -->
   <script>
-    // 1. Chuyển đổi Light / Dark mode
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const htmlEl = document.documentElement;
+    // Mật khẩu mở khóa chế độ Chủ Nhân (Bạn có thể đổi chuỗi này thành mật khẩu riêng của bạn)
+    const ADMIN_PASS = "assttz2026";
+    let isAdmin = sessionStorage.getItem("assttz_is_admin") === "true";
 
-    themeToggle.addEventListener('click', () => {
-      htmlEl.classList.toggle('dark');
-      const isDark = htmlEl.classList.contains('dark');
-      themeIcon.className = isDark 
-        ? 'fa-solid fa-sun text-amber-400 text-sm' 
-        : 'fa-solid fa-moon text-zinc-700 text-sm';
+    // ==========================================
+    // 1. HỆ THỐNG LƯU TRỮ INDEXEDDB (KHÔNG MẤT KHI TẢI LẠI TRANG)
+    // ==========================================
+    const DB_NAME = "AssttzPortfolioDB";
+    const DB_VERSION = 1;
+    let db;
+
+    function initDB() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+          const database = e.target.result;
+          if (!database.objectStoreNames.contains("profile")) {
+            database.createObjectStore("profile", { keyPath: "key" });
+          }
+          if (!database.objectStoreNames.contains("posts")) {
+            database.createObjectStore("posts", { keyPath: "id" });
+          }
+        };
+        request.onsuccess = (e) => {
+          db = e.target.result;
+          resolve(db);
+        };
+        request.onerror = (e) => reject(e);
+      });
+    }
+
+    function saveProfileItem(key, value) {
+      if (!db) return;
+      const tx = db.transaction("profile", "readwrite");
+      tx.objectStore("profile").put({ key, value });
+    }
+
+    function getAllProfile() {
+      return new Promise((resolve) => {
+        if (!db) return resolve({});
+        const tx = db.transaction("profile", "readonly");
+        const req = tx.objectStore("profile").getAll();
+        req.onsuccess = () => {
+          const map = {};
+          req.result.forEach(item => map[item.key] = item.value);
+          resolve(map);
+        };
+      });
+    }
+
+    function savePostToDB(post) {
+      if (!db) return;
+      const tx = db.transaction("posts", "readwrite");
+      tx.objectStore("posts").put(post);
+    }
+
+    function deletePostFromDB(id) {
+      if (!db) return;
+      const tx = db.transaction("posts", "readwrite");
+      tx.objectStore("posts").delete(id);
+    }
+
+    function getAllPostsFromDB() {
+      return new Promise((resolve) => {
+        if (!db) return resolve([]);
+        const tx = db.transaction("posts", "readonly");
+        const req = tx.objectStore("posts").getAll();
+        req.onsuccess = () => resolve(req.result || []);
+      });
+    }
+
+    // ==========================================
+    // 2. QUẢN LÝ CHẾ ĐỘ CHỦ NHÂN (ẨN VỚI KHÁCH)
+    // ==========================================
+    function updateAdminUI() {
+      const adminElements = document.querySelectorAll(".admin-only");
+      const lockIcon = document.getElementById("adminLockIcon");
+      const adminBtn = document.getElementById("adminToggleBtn");
+
+      if (isAdmin) {
+        adminElements.forEach(el => el.classList.remove("hidden"));
+        lockIcon.className = "fa-solid fa-lock-open text-xs text-blood-900 dark:text-red-400";
+        adminBtn.classList.add("border-blood-900");
+      } else {
+        adminElements.forEach(el => el.classList.add("hidden"));
+        lockIcon.className = "fa-solid fa-lock text-xs";
+        adminBtn.classList.remove("border-blood-900");
+      }
+      renderPosts();
+    }
+
+    // Bấm nút ổ khóa trên header
+    document.getElementById("adminToggleBtn").addEventListener("click", () => {
+      if (isAdmin) {
+        lockAdminMode();
+      } else {
+        openAuthModal();
+      }
     });
 
-    // 2. Dữ liệu bài viết mẫu ban đầu (Có bài ghim, nhiều ảnh, link, file)
-    let posts = [
-      {
-        id: 1,
-        pinned: true,
-        time: 'Ghim trên đầu trang • Vừa xong',
-        caption: 'Chào mừng bằng hữu ghé thăm góc nhỏ của Phạm Tùng Anh (assttz). Nơi đây mình dùng để lưu giữ những bức ảnh đẹp, vài dòng tản mạn giang hồ và chia sẻ các file, đường link hay ho sưu tầm được.',
-        images: [
-          'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=800&auto=format&fit=crop'
-        ],
-        link: {
-          url: 'https://github.com',
-          title: 'Kho lưu trữ mã nguồn & Dự án cá nhân của assttz'
-        },
-        file: null,
-        likes: 24,
-        liked: false,
-        comments: [
-          { user: 'Hạ Vũ', text: 'Giao diện thủy mặc kết hợp dark mode nhìn cuốn thực sự!' }
-        ]
-      },
-      {
-        id: 2,
-        pinned: false,
-        time: '2 giờ trước',
-        caption: 'Chia sẻ cho anh em bộ hình nền phong cách Mặc Nhiễm Anime độ phân giải cao mình mới tổng hợp được. Tải về dùng cho điện thoại cực kỳ hợp.',
-        images: [
-          'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?q=80&w=800&auto=format&fit=crop'
-        ],
-        link: null,
-        file: {
-          name: 'Bo_Suu_Tap_Thuy_Mac_Anime_4K.zip',
-          size: '18.4 MB'
-        },
-        likes: 15,
-        liked: false,
-        comments: []
+    // Bấm 3 lần vào con dấu đỏ "assttz" để mở khóa nhanh
+    let sealTapCount = 0;
+    let sealTapTimer;
+    document.getElementById("secretSeal").addEventListener("click", () => {
+      sealTapCount++;
+      clearTimeout(sealTapTimer);
+      if (sealTapCount >= 3) {
+        sealTapCount = 0;
+        if (!isAdmin) openAuthModal();
+        else showToast("Bạn đang ở chế độ Chủ Nhân rồi!");
+      } else {
+        sealTapTimer = setTimeout(() => { sealTapCount = 0; }, 800);
       }
-    ];
+    });
 
-    // 3. Xử lý form đăng bài mới
+    window.openAuthModal = () => {
+      document.getElementById("authModal").classList.remove("hidden");
+      setTimeout(() => document.getElementById("adminPasswordInput").focus(), 100);
+    };
+
+    window.closeAuthModal = () => {
+      document.getElementById("authModal").classList.add("hidden");
+      document.getElementById("adminPasswordInput").value = "";
+    };
+
+    window.verifyAdminPassword = () => {
+      const val = document.getElementById("adminPasswordInput").value;
+      if (val === ADMIN_PASS) {
+        isAdmin = true;
+        sessionStorage.setItem("assttz_is_admin", "true");
+        closeAuthModal();
+        updateAdminUI();
+        showToast("Đã mở khóa chế độ Chủ Nhân!");
+      } else {
+        showToast("Sai mật khẩu!");
+      }
+    };
+
+    window.lockAdminMode = () => {
+      isAdmin = false;
+      sessionStorage.removeItem("assttz_is_admin");
+      updateAdminUI();
+      showToast("Đã khóa chế độ Chủ Nhân (Giao diện khách xem)");
+    };
+
+    // ==========================================
+    // 3. CHỈNH SỬA AVATAR, ẢNH BÌA & BIO TỰ DO
+    // ==========================================
+    document.getElementById("avatarInput").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const dataUrl = ev.target.result;
+        document.getElementById("avatarImage").src = dataUrl;
+        document.getElementById("composerAvatar").src = dataUrl;
+        saveProfileItem("avatar", dataUrl);
+        renderPosts();
+        showToast("Đã cập nhật Avatar mới!");
+      };
+      reader.readAsDataURL(file);
+    });
+
+    document.getElementById("coverInput").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const dataUrl = ev.target.result;
+        document.getElementById("coverImage").src = dataUrl;
+        saveProfileItem("cover", dataUrl);
+        showToast("Đã cập nhật ảnh bìa mới!");
+      };
+      reader.readAsDataURL(file);
+    });
+
+    const bioDisplay = document.getElementById("bioDisplay");
+    const bioEditBox = document.getElementById("bioEditBox");
+    const bioTextarea = document.getElementById("bioTextarea");
+
+    document.getElementById("editBioBtn").addEventListener("click", () => {
+      bioTextarea.value = bioDisplay.textContent;
+      bioDisplay.classList.add("hidden");
+      document.getElementById("editBioBtn").classList.add("hidden");
+      bioEditBox.classList.remove("hidden");
+    });
+
+    document.getElementById("cancelBioBtn").addEventListener("click", () => {
+      bioEditBox.classList.add("hidden");
+      bioDisplay.classList.remove("hidden");
+      if (isAdmin) document.getElementById("editBioBtn").classList.remove("hidden");
+    });
+
+    document.getElementById("saveBioBtn").addEventListener("click", () => {
+      const newBio = bioTextarea.value.trim();
+      bioDisplay.textContent = newBio || " ";
+      saveProfileItem("bio", newBio);
+      bioEditBox.classList.add("hidden");
+      bioDisplay.classList.remove("hidden");
+      if (isAdmin) document.getElementById("editBioBtn").classList.remove("hidden");
+      showToast("Đã lưu Bio mới!");
+    });
+
+    // ==========================================
+    // 4. ĐĂNG BÀI, GHIM BÀI, LƯU TRỮ & TƯƠNG TÁC
+    // ==========================================
+    let posts = [];
     let selectedImages = [];
     let selectedFile = null;
 
-    const toggleLinkBtn = document.getElementById('toggleLinkBtn');
-    const linkInputBox = document.getElementById('linkInputBox');
-    const imageInput = document.getElementById('imageInput');
-    const fileInput = document.getElementById('fileInput');
-    const previewContainer = document.getElementById('previewContainer');
-
-    toggleLinkBtn.addEventListener('click', () => {
-      linkInputBox.classList.toggle('hidden');
+    document.getElementById("toggleLinkBtn").addEventListener("click", () => {
+      document.getElementById("linkInputBox").classList.toggle("hidden");
     });
 
-    imageInput.addEventListener('change', (e) => {
+    document.getElementById("imageInput").addEventListener("change", (e) => {
       const files = Array.from(e.target.files);
       files.forEach(file => {
         const reader = new FileReader();
@@ -389,29 +616,37 @@
       });
     });
 
-    fileInput.addEventListener('change', (e) => {
+    document.getElementById("fileInput").addEventListener("change", (e) => {
       const file = e.target.files[0];
-      if (file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
         const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
-        selectedFile = { name: file.name, size: sizeMB + ' MB' };
+        selectedFile = {
+          name: file.name,
+          size: sizeMB + " MB",
+          dataUrl: ev.target.result
+        };
         renderPreviews();
-      }
+      };
+      reader.readAsDataURL(file);
     });
 
     function renderPreviews() {
-      previewContainer.innerHTML = '';
+      const previewContainer = document.getElementById("previewContainer");
+      previewContainer.innerHTML = "";
       selectedImages.forEach((src, idx) => {
         previewContainer.innerHTML += `
           <div class="relative w-16 h-16 rounded-lg overflow-hidden border border-zinc-300 dark:border-zinc-700">
             <img src="${src}" class="w-full h-full object-cover" />
-            <button onclick="removeSelectedImage(${idx})" class="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-black/70 text-white text-[10px] flex items-center justify-center">×</button>
+            <button onclick="removeSelectedImage(${idx})" class="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-black/75 text-white text-[10px] flex items-center justify-center">×</button>
           </div>
         `;
       });
       if (selectedFile) {
         previewContainer.innerHTML += `
           <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-xs text-amber-700 dark:text-amber-300">
-            <i class="fa-solid fa-file-zipper"></i>
+            <i class="fa-solid fa-file-arrow-down"></i>
             <span class="truncate max-w-[180px]">${selectedFile.name}</span>
             <button onclick="removeSelectedFile()" class="ml-1 font-bold">×</button>
           </div>
@@ -428,20 +663,23 @@
       renderPreviews();
     };
 
-    document.getElementById('publishBtn').addEventListener('click', () => {
-      const caption = document.getElementById('postCaption').value.trim();
-      const linkUrl = document.getElementById('postLinkUrl').value.trim();
-      const linkTitle = document.getElementById('postLinkTitle').value.trim();
+    document.getElementById("publishBtn").addEventListener("click", () => {
+      const caption = document.getElementById("postCaption").value.trim();
+      const linkUrl = document.getElementById("postLinkUrl").value.trim();
+      const linkTitle = document.getElementById("postLinkTitle").value.trim();
 
       if (!caption && selectedImages.length === 0 && !linkUrl && !selectedFile) {
-        showToast('Hãy viết gì đó hoặc đính kèm ảnh/link trước khi đăng!');
+        showToast("Hãy nhập nội dung hoặc chọn ảnh/link trước khi đăng!");
         return;
       }
+
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" }) + " • " + now.toLocaleDateString("vi-VN");
 
       const newPost = {
         id: Date.now(),
         pinned: false,
-        time: 'Vừa xong',
+        time: timeStr,
         caption: caption,
         images: [...selectedImages],
         link: linkUrl ? { url: linkUrl, title: linkTitle || linkUrl } : null,
@@ -452,82 +690,92 @@
       };
 
       posts.unshift(newPost);
+      savePostToDB(newPost);
 
       // Reset form
-      document.getElementById('postCaption').value = '';
-      document.getElementById('postLinkUrl').value = '';
-      document.getElementById('postLinkTitle').value = '';
-      linkInputBox.classList.add('hidden');
+      document.getElementById("postCaption").value = "";
+      document.getElementById("postLinkUrl").value = "";
+      document.getElementById("postLinkTitle").value = "";
+      document.getElementById("linkInputBox").classList.add("hidden");
       selectedImages = [];
       selectedFile = null;
-      previewContainer.innerHTML = '';
+      document.getElementById("previewContainer").innerHTML = "";
 
       renderPosts();
-      showToast('Đã đăng bài viết mới!');
+      showToast("Đã đăng và lưu bài viết!");
     });
 
-    // 4. Render danh sách bài đăng (Ưu tiên bài ghim lên đầu)
     function renderPosts() {
-      const feed = document.getElementById('feedContainer');
-      feed.innerHTML = '';
+      const feed = document.getElementById("feedContainer");
+      const currentAvatar = document.getElementById("avatarImage").src;
+      feed.innerHTML = "";
 
-      // Sắp xếp: bài ghim (pinned: true) luôn đứng trước
-      const sortedPosts = [...posts].sort((a, b) => Number(b.pinned) - Number(a.pinned));
+      if (posts.length === 0) {
+        feed.innerHTML = `
+          <div class="rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 p-8 text-center space-y-2">
+            <i class="fa-solid fa-feather text-xl text-zinc-400"></i>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400">Chưa có bài viết nào được đăng tải.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Bài ghim luôn xếp trên cùng, sau đó đến bài mới nhất
+      const sortedPosts = [...posts].sort((a, b) => {
+        if (Number(b.pinned) !== Number(a.pinned)) return Number(b.pinned) - Number(a.pinned);
+        return b.id - a.id;
+      });
 
       sortedPosts.forEach(post => {
-        // Lưới hiển thị ảnh (1 ảnh, 2 ảnh, hoặc nhiều ảnh)
-        let imagesHtml = '';
+        let imagesHtml = "";
         if (post.images && post.images.length > 0) {
-          const gridClass = post.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2';
+          const gridClass = post.images.length === 1 ? "grid-cols-1" : "grid-cols-2";
           imagesHtml = `<div class="mt-3 grid ${gridClass} gap-1.5 rounded-xl overflow-hidden">`;
           post.images.forEach(img => {
             imagesHtml += `
               <img 
                 src="${img}" 
                 onclick="openImageModal('${img}')"
-                class="w-full ${post.images.length === 1 ? 'max-h-80' : 'h-44'} object-cover cursor-pointer hover:opacity-95 transition"
+                class="w-full ${post.images.length === 1 ? "max-h-96" : "h-44"} object-cover cursor-pointer hover:opacity-95 transition"
               />
             `;
           });
           imagesHtml += `</div>`;
         }
 
-        // Thẻ Link đính kèm
-        let linkHtml = '';
+        let linkHtml = "";
         if (post.link) {
           linkHtml = `
-            <a href="${post.link.url}" target="_blank" class="mt-3 flex items-center justify-between p-3 rounded-xl bg-zinc-200/60 dark:bg-zinc-800/80 border border-zinc-300/70 dark:border-zinc-700/80 hover:border-crimson-600 transition group">
+            <a href="${post.link.url}" target="_blank" rel="noopener" class="mt-3 flex items-center justify-between p-3 rounded-xl bg-zinc-200/60 dark:bg-zinc-800/80 border border-zinc-300/70 dark:border-zinc-700/80 hover:border-blood-900 transition group">
               <div class="min-w-0 pr-3">
                 <p class="text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 truncate">${post.link.url}</p>
-                <p class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate mt-0.5 group-hover:text-crimson-600 dark:group-hover:text-red-400">${post.link.title}</p>
+                <p class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate mt-0.5 group-hover:text-blood-900 dark:group-hover:text-red-400">${post.link.title}</p>
               </div>
-              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-crimson-600 shrink-0"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-blood-900 shrink-0"></i>
             </a>
           `;
         }
 
-        // Thẻ File đính kèm
-        let fileHtml = '';
+        let fileHtml = "";
         if (post.file) {
           fileHtml = `
-            <div onclick="showToast('Đang chuẩn bị tải xuống: ${post.file.name}')" class="mt-3 cursor-pointer flex items-center justify-between p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 hover:bg-amber-500/15 transition">
+            <a href="${post.file.dataUrl || '#'}" download="${post.file.name}" class="mt-3 flex items-center justify-between p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 hover:bg-amber-500/15 transition">
               <div class="flex items-center gap-3 min-w-0">
                 <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
                   <i class="fa-solid fa-file-arrow-down"></i>
                 </div>
                 <div class="min-w-0">
                   <p class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate">${post.file.name}</p>
-                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400">${post.file.size} • Nhấn để tải về</p>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400">${post.file.size} • Nhấn để tải xuống</p>
                 </div>
               </div>
               <i class="fa-solid fa-download text-xs text-amber-600 dark:text-amber-400"></i>
-            </div>
+            </a>
           `;
         }
 
-        // Danh sách bình luận
-        let commentsHtml = '';
-        if (post.comments.length > 0) {
+        let commentsHtml = "";
+        if (post.comments && post.comments.length > 0) {
           commentsHtml = `<div class="mt-3 pt-2.5 border-t border-zinc-200/70 dark:border-zinc-800/80 space-y-2">`;
           post.comments.forEach(c => {
             commentsHtml += `
@@ -540,22 +788,20 @@
           commentsHtml += `</div>`;
         }
 
-        const article = document.createElement('article');
-        article.className = `rounded-2xl bg-ink-50/90 dark:bg-ink-900/90 border ${post.pinned ? 'border-crimson-600/50 dark:border-red-500/40' : 'border-zinc-300/70 dark:border-zinc-800'} p-4 shadow-sm transition`;
+        const article = document.createElement("article");
+        article.className = `rounded-2xl bg-ink-50/90 dark:bg-ink-900/90 border ${post.pinned ? "border-blood-900/60" : "border-zinc-300/70 dark:border-zinc-800"} p-4 shadow-sm transition`;
 
         article.innerHTML = `
-          <!-- Nhãn bài viết được ghim -->
           ${post.pinned ? `
-            <div class="flex items-center gap-1.5 text-[11px] font-semibold text-crimson-600 dark:text-red-400 mb-2.5">
+            <div class="flex items-center gap-1.5 text-[11px] font-bold text-blood-900 dark:text-red-400 mb-2.5">
               <i class="fa-solid fa-thumbtack rotate-45"></i>
               <span>BÀI VIẾT ĐÃ GHIM</span>
             </div>
-          ` : ''}
+          ` : ""}
 
-          <!-- Đầu bài viết -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2.5">
-              <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=200&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover border border-zinc-300 dark:border-zinc-700" />
+              <img src="${currentAvatar}" class="w-9 h-9 rounded-full object-cover border border-blood-900/40" />
               <div>
                 <div class="flex items-center gap-1.5">
                   <span class="text-sm font-bold text-zinc-900 dark:text-white">Phạm Tùng Anh</span>
@@ -565,23 +811,29 @@
               </div>
             </div>
 
-            <!-- Nút Ghim / Bỏ ghim -->
-            <button onclick="togglePin(${post.id})" title="${post.pinned ? 'Bỏ ghim' : 'Ghim bài viết'}" class="w-8 h-8 rounded-full flex items-center justify-center text-xs ${post.pinned ? 'bg-crimson-600/15 text-crimson-600 dark:text-red-400' : 'text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800'} transition">
-              <i class="fa-solid fa-thumbtack"></i>
-            </button>
+            <!-- Nút Ghim & Xóa bài (Chỉ hiện khi mở khóa Chủ Nhân) -->
+            ${isAdmin ? `
+              <div class="flex items-center gap-1">
+                <button onclick="togglePin(${post.id})" title="${post.pinned ? "Bỏ ghim" : "Ghim bài viết"}" class="w-8 h-8 rounded-full flex items-center justify-center text-xs ${post.pinned ? "bg-blood-900/20 text-blood-900 dark:text-red-400" : "text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800"} transition">
+                  <i class="fa-solid fa-thumbtack"></i>
+                </button>
+                <button onclick="deletePost(${post.id})" title="Xóa bài viết" class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-zinc-400 hover:text-red-500 hover:bg-red-500/10 transition">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            ` : ""}
           </div>
 
-          <!-- Nội dung Caption -->
-          ${post.caption ? `<p class="mt-3 text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed whitespace-pre-line">${post.caption}</p>` : ''}
+          ${post.caption ? `<p class="mt-3 text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed whitespace-pre-line">${post.caption}</p>` : ""}
 
           ${imagesHtml}
           ${linkHtml}
           ${fileHtml}
 
-          <!-- Thanh Tương tác (Tim, Bình luận, Chia sẻ) -->
+          <!-- Thanh Tương tác -->
           <div class="mt-3.5 pt-2.5 border-t border-zinc-200/80 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400">
-            <button onclick="toggleLike(${post.id})" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-zinc-200/60 dark:hover:bg-zinc-800 transition ${post.liked ? 'text-crimson-600 dark:text-red-400 font-semibold' : ''}">
-              <i class="${post.liked ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+            <button onclick="toggleLike(${post.id})" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-zinc-200/60 dark:hover:bg-zinc-800 transition ${post.liked ? "text-blood-900 dark:text-red-400 font-semibold" : ""}">
+              <i class="${post.liked ? "fa-solid" : "fa-regular"} fa-heart"></i>
               <span>${post.likes} Thích</span>
             </button>
 
@@ -598,16 +850,16 @@
 
           ${commentsHtml}
 
-          <!-- Ô nhập bình luận nhanh -->
+          <!-- Ô nhập bình luận -->
           <div class="mt-2.5 flex items-center gap-2">
             <input 
               id="comment-input-${post.id}" 
               type="text" 
-              placeholder="Viết lời nhắn cho assttz..." 
+              placeholder="Viết bình luận..." 
               onkeydown="if(event.key === 'Enter') addComment(${post.id})"
-              class="flex-1 bg-zinc-200/60 dark:bg-zinc-800/70 rounded-full px-3.5 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-crimson-600"
+              class="flex-1 bg-zinc-200/60 dark:bg-zinc-800/70 rounded-full px-3.5 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blood-900"
             />
-            <button onclick="addComment(${post.id})" class="w-7 h-7 rounded-full bg-crimson-600 text-white text-xs flex items-center justify-center hover:bg-crimson-500 transition shrink-0">
+            <button onclick="addComment(${post.id})" class="w-7 h-7 rounded-full bg-blood-900 text-white text-xs flex items-center justify-center hover:bg-blood-800 transition shrink-0">
               <i class="fa-solid fa-paper-plane text-[10px]"></i>
             </button>
           </div>
@@ -617,14 +869,22 @@
       });
     }
 
-    // Các hàm tương tác
+    // Các hàm tương tác bài viết
     window.togglePin = (id) => {
       const post = posts.find(p => p.id === id);
       if (post) {
         post.pinned = !post.pinned;
+        savePostToDB(post);
         renderPosts();
-        showToast(post.pinned ? 'Đã ghim bài viết lên đầu!' : 'Đã bỏ ghim bài viết.');
+        showToast(post.pinned ? "Đã ghim bài viết lên đầu!" : "Đã bỏ ghim bài viết.");
       }
+    };
+
+    window.deletePost = (id) => {
+      posts = posts.filter(p => p.id !== id);
+      deletePostFromDB(id);
+      renderPosts();
+      showToast("Đã xóa bài viết.");
     };
 
     window.toggleLike = (id) => {
@@ -632,6 +892,7 @@
       if (post) {
         post.liked = !post.liked;
         post.likes += post.liked ? 1 : -1;
+        savePostToDB(post);
         renderPosts();
       }
     };
@@ -646,43 +907,79 @@
       if (!text) return;
       const post = posts.find(p => p.id === id);
       if (post) {
-        post.comments.push({ user: 'Khách giang hồ', text });
+        const commenterName = isAdmin ? "Phạm Tùng Anh (Chủ nhà)" : "Khách ghé thăm";
+        post.comments.push({ user: commenterName, text });
+        savePostToDB(post);
         renderPosts();
       }
     };
 
     window.sharePost = (id) => {
       const post = posts.find(p => p.id === id);
-      const shareText = `${post.caption}\n— Chia sẻ từ trang của Phạm Tùng Anh (assttz)`;
+      const shareText = `${post.caption || "Bài viết từ Phạm Tùng Anh (assttz)"}\nXem thêm tại: ${window.location.href}`;
       if (navigator.clipboard) {
         navigator.clipboard.writeText(shareText);
       }
-      showToast('Đã sao chép nội dung bài viết để chia sẻ!');
+      showToast("Đã sao chép nội dung & link để chia sẻ!");
     };
+
+    window.copyEmail = () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText("phamtunganh40@gmail.com");
+      }
+      showToast("Đã sao chép: phamtunganh40@gmail.com");
+    };
+
+    // Chuyển đổi Light / Dark Mode
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      document.getElementById("themeIcon").className = isDark 
+        ? "fa-solid fa-sun text-amber-400 text-sm" 
+        : "fa-solid fa-moon text-zinc-700 text-sm";
+    });
 
     // Modal xem ảnh
     window.openImageModal = (src) => {
-      document.getElementById('modalImg').src = src;
-      document.getElementById('imageModal').classList.remove('hidden');
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
     };
     window.closeImageModal = () => {
-      document.getElementById('imageModal').classList.add('hidden');
+      document.getElementById("imageModal").classList.add("hidden");
     };
 
     // Thông báo Toast
     let toastTimeout;
     window.showToast = (msg) => {
-      const toast = document.getElementById('toast');
+      const toast = document.getElementById("toast");
       toast.textContent = msg;
-      toast.classList.remove('opacity-0');
+      toast.classList.remove("opacity-0");
       clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => {
-        toast.classList.add('opacity-0');
-      }, 2500);
+        toast.classList.add("opacity-0");
+      }, 2600);
     };
 
-    // Khởi chạy ban đầu
-    renderPosts();
+    // ==========================================
+    // 5. KHỞI CHẠY & TẢI DỮ LIỆU ĐÃ LƯU
+    // ==========================================
+    (async function bootstrap() {
+      await initDB();
+      const profile = await getAllProfile();
+      if (profile.avatar) {
+        document.getElementById("avatarImage").src = profile.avatar;
+        document.getElementById("composerAvatar").src = profile.avatar;
+      }
+      if (profile.cover) {
+        document.getElementById("coverImage").src = profile.cover;
+      }
+      if (profile.bio !== undefined) {
+        document.getElementById("bioDisplay").textContent = profile.bio;
+      }
+
+      posts = await getAllPostsFromDB();
+      updateAdminUI();
+    })();
   </script>
 </body>
 </html>
